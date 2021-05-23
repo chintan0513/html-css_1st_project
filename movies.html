@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>365 Entertainment</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="connect.js"></script>
+</head>
+<body style="background-color: black;">
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <img src="assets/logo.png" alt="logo" height="120" style="border-radius: 10px;" width="120" class="img-fluid shadow-lg">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="movies.html">Movies</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">TV Series</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Audio</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+      <div class="slider">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="assets/abc1.jpg" class="img-fluid d-block w-100" alt="home">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/abc2.jpg" class="d-block w-100 img-fluid" alt="arelam reborn">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/abc3.jpg" class="d-block w-100 img-fluid" alt="Joker">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/abc4.jpg" class="d-block w-100 img-fluid" alt="Aquaman">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/abc5.jpg" class="d-block w-100 img-fluid" alt="cup">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div> 
+     </div>
+
+     <div class="content containr-fluid text-center">
+        <div class="row header">
+            <div class="col-lg-2">
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" style="background-color: yellow;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" onclick="toggleGenreList()" aria-expanded="false"><span id="genreText">Genre</span></button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item">All</a></li>
+                      <li><a class="dropdown-item" onclick="getMediaPosters(this.text)">Action</a></li>
+                      <li><a class="dropdown-item" onclick="getMediaPosters(this.text)">Drama</a></li>
+                      <li><a class="dropdown-item" onclick="getMediaPosters(this.text)">Sci-Fi</a></li>
+                    </ul>
+                  </div>
+            </div>
+            <div class="col-lg-10">
+                <input type="text" id="myInput" onkeyup="myFun()" placeholder="Search for your favourite movie title" title="Type in a name">
+            </div>
+            
+            <section>
+                <div class="all container-fluid" id="myUL">
+                   <div class="row text-center movies-action">
+                       <div class="col-md-2">
+                           <div class="card bg-dark text-white">
+                               <img src="assets/nano1.jpg" class="card-img" alt="Haider">
+                               <div class="text-block">
+                                 <h5 class="card-title">Haider</h5>
+                                 <p class="card-text">Indian crime tragedy film.</p>
+                               </div>
+                             </div>
+                       </div>
+                       <div class="col-md-2">
+                           <div class="card bg-dark text-white">
+                               <img src="assets/nano2.jpg" class="card-img img-fluid" alt="Dream 2">
+                               <div class="text-block">
+                                 <h5 class="card-title">Dream 2</h5>
+                                 <p class="card-text">Thriller, Mystery & Comedy</p>
+                               </div>
+                             </div>
+                       </div>
+                       <div class="col-md-2">
+                           <div class="card bg-dark text-white">
+                               <img src="assets/nano3.jpg" class="card-img img-fluid" alt="Batman">
+                               <div class="text-block">
+                                 <h5 class="card-title">Batman</h5>
+                                 <p class="card-text">A Marvel Comics superhero team.</p>
+                               </div>
+                             </div>
+                       </div>
+                       <div class="col-md-2">
+                           <div class="card bg-dark text-white">
+                               <img src="assets/nano4.jpg" class="card-img" alt="Monster Manav">
+                               <div class="text-block">
+                                 <h5 class="card-title">Monster Manav</h5>
+                                 <p class="card-text">Japanese manga series written by Tsugumi.</p>
+                               </div>
+                             </div>
+                       </div>
+                       <div class="col-md-2">
+                           <div class="card bg-dark text-white">
+                               <img src="assets/nano5.jpg" class="card-img" alt="Kill Bill">
+                               <div class="text-block">
+                                 <h5 class="card-title">Kill Bill</h5>
+                                 <p class="card-text">2003 American martial arts film.</p>
+                               </div>
+                             </div>
+                       </div>
+                       <div class="col-md-2">
+                           <div class="card bg-dark text-white">
+                               <img src="assets/nano6.jpg" class="card-img" alt="Rowdy">
+                               <div class="text-block">
+                                 <h5 class="card-title">Rowdy</h5>
+                                 <p class="card-text">Indian action drama film.</p>
+                               </div>
+                             </div>
+                       </div>
+                   </div>
+
+
+                   <div class="row text-center movies-drama mt-5">
+                    <div class="col-md-2">
+                        <div class="card bg-dark text-white">
+                            <img src="assets/nano7.jpg" class="card-img" alt="Agnipaath">
+                            <div class="text-block">
+                              <h5 class="card-title">Agnipaath</h5>
+                              <p class="card-text">Indian crime tragedy film.</p>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card bg-dark text-white">
+                            <img src="assets/nano8.jpg" class="card-img img-fluid" alt="Ankhein">
+                            <div class="text-block">
+                              <h5 class="card-title">Ankhein</h5>
+                              <p class="card-text">Thriller, Mystery & Comedy</p>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card bg-dark text-white">
+                            <img src="assets/nano9.jpg" class="card-img img-fluid" alt="Guide">
+                            <div class="text-block">
+                              <h5 class="card-title">Guide</h5>
+                              <p class="card-text">A Marvel Comics superhero team.</p>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card bg-dark text-white">
+                            <img src="assets/nano10.jpg" class="card-img" alt="Deewar">
+                            <div class="text-block">
+                              <h5 class="card-title">Deewar</h5>
+                              <p class="card-text">2016 ‧ Fantasy/Science Fiction.</p>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card bg-dark text-white">
+                            <img src="assets/nano11.jpg" class="card-img" alt="Sholay">
+                            <div class="text-block">
+                              <h5 class="card-title">Sholay</h5>
+                              <p class="card-text">2003 American martial arts film.</p>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card bg-dark text-white">
+                            <img src="assets/nano12.jpg" class="card-img" alt="K3G">
+                            <div class="text-block">
+                              <h5 class="card-title">K3G</h5>
+                              <p class="card-text">A Marvel Comics superhero team.</p>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+
+                    <div class="row text-center movies-scifi mt-5">
+                        <div class="col-md-2">
+                            <div class="card bg-dark text-white">
+                                <img src="assets/nano13.jpg" class="card-img" alt="Shaurya">
+                                <div class="text-block">
+                                  <h5 class="card-title">Shaurya</h5>
+                                  <p class="card-text">A Marvel Comics superhero team.</p>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card bg-dark text-white">
+                                <img src="assets/nano14.jpg" class="card-img img-fluid" alt="Cheeni Kam">
+                                <div class="text-block">
+                                  <h5 class="card-title">Cheeni Kam</h5>
+                                  <p class="card-text">A Marvel Comics superhero team.</p>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card bg-dark text-white">
+                                <img src="assets/nano15.jpg" class="card-img img-fluid" alt="Ishq Vishq">
+                                <div class="text-block">
+                                  <h5 class="card-title">Ishq Vishq</h5>
+                                  <p class="card-text">A Marvel Comics superhero team.</p>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card bg-dark text-white">
+                                <img src="assets/nano16.jpg" class="card-img" alt="Padmaavat">
+                                <div class="text-block">
+                                  <h5 class="card-title">Padmaavat</h5>
+                                  <p class="card-text">2016 ‧ Fantasy/Science Fiction.</p>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card bg-dark text-white">
+                                <img src="assets/nano17.jpg" class="card-img" alt="Kai Po Che">
+                                <div class="text-block">
+                                  <h5 class="card-title">Kai Po Che</h5>
+                                  <p class="card-text">A Marvel Comics superhero team.</p>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card bg-dark text-white">
+                                <img src="assets/nano18.jpg" class="card-img" alt="Raabta">
+                                <div class="text-block">
+                                  <h5 class="card-title">Raabta</h5>
+                                  <p class="card-text">A Marvel Comics superhero team.</p>
+                                </div>
+                              </div>
+                        </div>
+                </div>
+            </section>
+        </div>
+     </div>
+
+      <footer class="d-flex p-3">
+        <a href="index.html"><img src="assets/logo.png" style="border-radius: 10px;" alt="logo" class="img-fluid shadow-lg" height="120" width="120"></a>
+        <p class="pt-4">Powered by 365 Entertainment Portal 2019. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+</body>
+</html>

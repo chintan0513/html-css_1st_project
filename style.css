@@ -1,0 +1,59 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+}
+nav, footer {
+    background: linear-gradient(to right, yellow, cyan);
+}
+footer p {
+    margin-left: 25px;
+}
+.nav-link {
+    font-weight: bold;
+    margin: 10px;
+}
+.slider {
+    margin-right: 100px;
+}
+.carousel {
+    margin-bottom: 50px;
+}
+button span:hover {
+    background: whitesmoke;
+    color: black;
+    opacity: 0.5;
+}
+section {
+    color: white;
+    padding: 20px;
+}
+section .action, .drama, .sci-fi {
+    margin-bottom: 100px;
+}
+section h3 {
+    border-bottom: 1px solid white;
+    padding-bottom: 20px;
+}
+section .text-block {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}   
+.content input {
+    width: 50%;
+}
+#myInput {
+    background: yellow url('assets/loupe.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right 10%;
+}
